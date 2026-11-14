@@ -1,0 +1,26 @@
+# RaceMenu Overlay FPS Helper - hides RaceMenu overlay shapes that are empty (they hold RaceMenu's blank default
+# texture), so unused overlay slots stop costing draw calls. A slot is shown again the moment a real texture is
+# written to it. Slot counts and every mod that paints overlays keep working unchanged.
+
+# Turn the whole thing off without removing the mod (takes effect at game start).
+enabled = true
+
+# How often the known overlay shapes are re-checked, in milliseconds (20-2000). A freshly painted overlay appears
+# within this time. Higher = cheaper, slightly later reveals.
+intervalMs = 100
+
+# How often each actor's scene graph is fully re-walked to find newly created overlay shapes, in milliseconds
+# (100-10000). Newly created empty slots can be drawn for up to this long. Higher = cheaper.
+rescanMs = 1000
+
+# 0 = every loaded actor. Otherwise only actors within this many game units of the player are scanned.
+radius = 0
+
+# Also hide the player's own empty overlay slots.
+includePlayer = true
+
+# EXPERIMENTAL - leave this OFF unless you know you need it.
+# Also hide overlays that hold a real texture but have alpha 0 (fully transparent). Known problem: on at least one
+# setup this stopped another mod's overlay alpha from ever being applied (all body hair disappeared). The gain is a
+# handful of shapes, so the default is false.
+cullTransparent = false

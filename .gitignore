@@ -1,0 +1,8 @@
+build/
+build-local/
+dist/SKSE/Plugins/*.dll
+dist/SKSE/Plugins/*.pdb
+CMakeUserPresets.json
+_build.cmd
+_build.log
+*.log
